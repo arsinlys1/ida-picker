@@ -1,0 +1,120 @@
+﻿<Window x:Class="ida_picker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="IDA Launcher" Height="500" Width="700"
+        WindowStartupLocation="CenterScreen"
+        KeyDown="Window_KeyDown"
+        Background="{DynamicResource BackgroundBrush}">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0" 
+                   Text="Select IDA Installation (Press 1-9 for quick selection):" 
+                   FontSize="16" FontWeight="SemiBold" 
+                   Margin="0,0,0,20"
+                   Foreground="{DynamicResource ForegroundBrush}"/>
+        
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <ItemsControl x:Name="IdaItemsControl">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Background="{DynamicResource CardBackgroundBrush}" 
+                                BorderBrush="{DynamicResource CardBorderBrush}" 
+                                BorderThickness="1"
+                                CornerRadius="4"
+                                Margin="10"
+                                Padding="15"
+                                Width="150"
+                                Height="180"
+                                Cursor="Hand"
+                                MouseLeftButtonDown="Item_MouseLeftButtonDown"
+                                Tag="{Binding}">
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect ShadowDepth="2" 
+                                                            BlurRadius="5" 
+                                                            Opacity="0.3"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" 
+                                                    Value="{DynamicResource CardHoverBackgroundBrush}"/>
+                                            <Setter Property="BorderBrush" 
+                                                    Value="{DynamicResource CardHoverBorderBrush}"/>
+                                            <Setter Property="BorderThickness" Value="2"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                
+                                <Image Grid.Row="0" 
+                                       Source="{Binding IconSource}" 
+                                       Width="64" 
+                                       Height="64"
+                                       HorizontalAlignment="Center"
+                                       Margin="0,0,0,10"/>
+                                
+                                <TextBlock Grid.Row="1" 
+                                          Text="{Binding DisplayName}" 
+                                          FontSize="13"
+                                          FontWeight="SemiBold"
+                                          TextWrapping="Wrap"
+                                          TextAlignment="Center"
+                                          Margin="0,0,0,5"
+                                          Foreground="{DynamicResource ForegroundBrush}"/>
+                                
+                                <TextBlock Grid.Row="3" 
+                                          Text="{Binding Version}" 
+                                          FontSize="11"
+                                          Foreground="{DynamicResource SecondaryTextBrush}"
+                                          TextAlignment="Center"
+                                          VerticalAlignment="Bottom"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+        
+        <Button Grid.Row="2" 
+                x:Name="CancelButton" 
+                Content="Cancel" 
+                Width="100" 
+                Height="35"
+                HorizontalAlignment="Right"
+                Margin="0,20,0,0"
+                Click="CancelButton_Click"
+                Background="{DynamicResource ButtonBackgroundBrush}"
+                Foreground="{DynamicResource ForegroundBrush}">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" 
+                                    Value="{DynamicResource ButtonHoverBrush}"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+    </Grid>
+</Window>
