@@ -1,5 +1,7 @@
 # IDA Picker
 
+![Screenshot of IDA Picker](./Assets/screenshot.png)
+
 A WPF application that allows users to quickly select and launch different IDA installations when opening binary files or IDA project files, useful when you have multiple IDBs that use different versions of IDA. The application automatically detects all installed IDA versions on the system, letting the user pick whatever IDA instance they want to use for the file.
 
 ## Requirements
@@ -28,6 +30,10 @@ The application will:
 2. Show each installation with its icon, name, and version
 3. Allow selection via mouse click or keyboard (1-9)
 4. Launch the selected IDA version with the specified file
+
+### Theme Support
+
+The application will also automatically checks for the current theme applied on the Windows installation and choose between dark and light mode.
 
 ### Keyboard Shortcuts
 
