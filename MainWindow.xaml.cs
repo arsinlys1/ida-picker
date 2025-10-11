@@ -8,7 +8,7 @@ namespace ida_picker
 {
     public partial class MainWindow
     {
-        private readonly string _filePath;
+        private readonly string? _filePath;
         private List<IdaInstallation>? _idaInstallations;
 
         public MainWindow(string? filePath)
@@ -30,12 +30,10 @@ namespace ida_picker
                 return;
             }
             
-            if (string.IsNullOrEmpty(_filePath))
+            if (!string.IsNullOrEmpty(_filePath))
             {
-                MessageBox.Show("No file path provided. Please specify a file path as a command-line argument.", 
-                    "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-                Application.Current.Shutdown();
-                return;
+                FilePathLabel.Content = $"File: {_filePath}";
+                FilePathLabel.Visibility = Visibility.Visible;
             }
             
             IdaItemsControl.ItemsSource = _idaInstallations;
@@ -129,7 +127,14 @@ namespace ida_picker
                 
                 if (File.Exists(idaExePath))
                 {
-                    Process.Start(idaExePath, $"\"{_filePath}\"");
+                    if (!string.IsNullOrEmpty(_filePath))
+                    {
+                        Process.Start(idaExePath, $"\"{_filePath}\"");
+                    }
+                    else
+                    {
+                        Process.Start(idaExePath);
+                    }
                     Application.Current.Shutdown();
                 }
                 else
