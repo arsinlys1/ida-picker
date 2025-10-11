@@ -13,25 +13,9 @@ namespace ida_picker
 
         public MainWindow(string? filePath)
         {
-            var theme = ThemeHelper.GetWindowsTheme();
-            ThemeHelper.ApplyTheme(theme);
-            
             InitializeComponent();
             _filePath = filePath;
             this.Loaded += MainWindow_Loaded;
-            this.SourceInitialized += MainWindow_SourceInitialized;
-        }
-
-        private void MainWindow_SourceInitialized(object? sender, EventArgs e)
-        {
-            var theme = ThemeHelper.GetWindowsTheme();
-            ThemeHelper.UpdateTitleBarTheme(this, theme);
-            
-            ThemeHelper.WatchForThemeChanges(this, newTheme =>
-            {
-                ThemeHelper.ApplyTheme(newTheme);
-                ThemeHelper.UpdateTitleBarTheme(this, newTheme);
-            });
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
